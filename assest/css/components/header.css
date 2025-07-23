@@ -1,0 +1,142 @@
+@import url("../gobal/gobal.css");
+
+/* === HEADER COMPONENT === */
+#header {
+  background-color: var(--clr-blue);
+  color: var(--clr-white);
+  min-height: 80px;
+  margin-bottom: 2rem;
+
+  position: relative;
+
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > * {
+      flex: 1;
+    }
+    .logo-container {
+      flex-shrink: 0;
+      .logo {
+        max-width: 130px;
+      }
+    }
+
+    /* == NAVBAR at min-width:760px == */
+    .nav-bar {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 5;
+      background-color: hsla(211, 44%, 22%, 0.7);
+
+      &.show-menu {
+        display: block;
+      }
+
+      @media (min-width: 960px) {
+        position: static;
+        height: fit-content;
+        width: fit-content;
+        display: block;
+        background: transparent;
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-wrap: nowrap;
+        width: 80%;
+        margin-inline: auto;
+        border-radius: 20px;
+        padding-block: 30px;
+        margin-top: 50px;
+        background-color: var(--clr-white);
+
+        @media (min-width: 960px) {
+          margin-inline: 0;
+          padding-block: 0;
+          width: 100%;
+          background-color: transparent;
+          flex-direction: row;
+          align-items: center;
+          justify-content: end;
+          margin-top: 0;
+        }
+
+        a {
+          font-size: 20px;
+          transition: 0.3s ease-in-out;
+          color: var(--clr-black);
+          @media (min-width: 960px) {
+            color: white;
+            font-size: var(--fs-smC);
+          }
+          &:hover:not(.whatsapp-btn) {
+            opacity: 0.5;
+          }
+          &.active {
+            text-decoration: underline;
+            text-decoration-color: var(--clr-blue);
+            text-underline-offset: 10px;
+            text-decoration-thickness: 3px;
+            font-weight: var(--fw-bold);
+          }
+        }
+        .whatsapp-btn {
+          background-color: #76ffbd;
+          color: #0097ff;
+          border-radius: 40px;
+          text-align: center;
+          padding: 8px 20px;
+          font-weight: var(--fw-bold);
+          @media (min-width: 960px) {
+            padding: 5px 15px;
+          }
+        }
+        .theme-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          i {
+            display: block;
+            font-size: 24px;
+            font-weight: 300p;
+            cursor: pointer;
+            color: var(--clr-black);
+            @media (min-width: 960px) {
+              color: white;
+            }
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+
+    /* === MENU BTN === */
+    .menu-btn-container {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      @media (min-width: 960px) {
+        display: none;
+      }
+
+      .menu-btn {
+        font-size: 20px;
+        cursor: pointer;
+        color: white;
+      }
+    }
+  }
+}

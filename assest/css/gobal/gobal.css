@@ -1,0 +1,52 @@
+@import url("../../fontawesome/css/all.min.css");
+@import url("./reset.css");
+
+/* === Wrapper === */
+.wrapper {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+
+  .container {
+    grid-column: 2;
+  }
+
+  @media (min-width: 960px) {
+    grid-template-columns: 1fr min(100% - 48px, 960px) 1fr;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr min(100% - 96px, 1024px) 1fr;
+  }
+}
+
+.btn {
+  color: white;
+  background-color: var(--clr-blue);
+  text-align: center;
+  border-radius: 32px;
+  padding: 5px 10px;
+  width: fit-content;
+  font-weight: var(--fw-semiBold);
+  transition: 0.3s ease-in-out;
+  transition-property: background, border, color;
+
+  &:hover {
+    border: 1px solid var(--clr-blue);
+    background-color: transparent;
+    color: var(--clr-blue);
+  }
+}
+.highlight {
+  color: var(--clr-blue);
+}
+.theme-icon {
+  display: none;
+}
+.back-arrow {
+  cursor: pointer;
+  font-size: 25px;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
